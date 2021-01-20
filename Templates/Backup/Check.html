@@ -1,0 +1,99 @@
+{% extends 'basic.html' %}
+{% block style%}
+{% endblock %}
+
+
+
+{% block content %}
+
+		<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" style="width: 100%;height: 500px; overflow: hidden;">
+		  
+		  <div class="carousel-inner ">
+		    <div class="carousel-item active" >
+		      <img src="{% static 'images/bg_1.jpg'%}"  class="d-block w-100" alt="First slide">
+		    </div>
+		    <div class="carousel-item ">
+		      <img src="{% static 'images/bg_2.jpg'%}" class="d-block w-100" alt="Second slide">
+		    </div>
+		    <div class="carousel-item">
+		      <img src="{% static 'images/bg_3.jpg'%}" class="d-block w-100" alt="Third slide">
+		    </div>
+		  </div>
+		  
+		</div>
+
+		<!------------------------------Grocery & Staples------------------------------------------------------>
+
+		<h3 style="margin: 30px; width: 100%;">
+		  Grocery & Staples
+		  <small class="text-muted" style="font-size: 15px;">Recommanded For You</small>
+
+
+		  <a href="Grocery"><button type="button" class="btn btn-info" style="float: right;margin-right: 60px;">See More</button>
+		  </a>
+		</h3>
+
+		<div class="row" style="margin: 30px;">
+			<div class="col d-flex justify-content-center">
+			{% for product in products %}
+				<div class="card"  style="width: 18rem; margin-right: 20px; ">
+				  <img src="/media/{{product.image}}" class="card-img-top" alt="..." style=" height: 10rem;object-fit: contain;">
+				  <div class="card-body">
+				    <h5 class="card-title" style="  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{product.product_name}}</h5>
+				    <p class="card-text" style="  white-space: nowrap; overflow: hidden;text-overflow: ellipsis; max-width: 400px;">{{product.decription}}</p>
+				    <small class="text-muted" style="font-size: 15px;">1L</small></br>
+				    <a href="#" class="btn btn-primary" style="margin-top: 20px">Add To Cart</a>
+				  </div>
+				</div>
+
+
+			{% endfor %}
+			</div>
+		</div>
+
+		<div style="height: 200px;overflow:hidden; ">
+			<img src="{% static 'images/bg_1.jpg'%}" class="img-fluid" alt="Responsive image" >
+		</div>
+		   
+		  
+		</div>
+		<h3 style="margin: 30px; width: 100%;">
+		  Household Items
+		 	 <small class="text-muted" style="font-size: 15px;">Recommanded For You</small>
+
+		<a href="product"><button type="button" class="btn btn-info" style="float: right;margin-right: 60px;">See More</button></a>
+		</h3>
+
+		<div class="row" style="margin: 30px;">
+			<div class="col d-flex justify-content-center">
+			{% for product in products %}
+				<div class="card"  style="width: 18rem; margin-right: 20px; ">
+				  <img src="/media/{{product.image}}" class="card-img-top" alt="..." style=" height: 10rem;object-fit: contain;">
+				  <div class="card-body">
+				    <h5 class="card-title" style="  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{product.product_name}}</h5>
+				    <p class="card-text" style="  white-space: nowrap; overflow: hidden;text-overflow: ellipsis; max-width: 400px;">{{product.decription}}</p>
+				    <small class="text-muted" style="font-size: 15px;">1L</small></br>
+				    <a href="#" class="btn btn-primary" style="margin-top: 20px">Add To Cart</a>
+				  </div>
+				</div>
+
+
+			{% endfor %}
+			</div>
+		</div>
+		
+		</div>
+
+
+
+
+{% endblock %}
+
+
+
+{% block js %}
+<script type="text/javascript">
+	console.log("hello");
+
+</script>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block content %}
+
+		<h3 style="margin: 30px; width: 100%;">
+		  Grocery & Staples
+		  <small class="text-muted" style="font-size: 15px;">Recommanded For You</small>
+
+
+		  <a href="Grocery"><button type="button" class="btn btn-info" style="float: right;margin-right: 60px;">See More</button>
+		  </a>
+		</h3>
+
+		<div class="row" style="margin: 30px;">
+			<div class="col d-flex justify-content-center">
+			{% for product in products %}
+				<div class="card"  style="width: 18rem; margin-right: 20px; ">
+				  <img src="/media/{{product.image}}" class="card-img-top" alt="..." style=" height: 10rem;object-fit: contain;">
+				  <div class="card-body">
+				    <h5 class="card-title" style="  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{product.product_name}}</h5>
+				    <p class="card-text" style="  white-space: nowrap; overflow: hidden;text-overflow: ellipsis; max-width: 400px;">{{product.decription}}</p>
+				    <small class="text-muted" style="font-size: 15px;">1L</small></br>
+				    <a href="#" class="btn btn-primary" style="margin-top: 20px">Add To Cart</a>
+				  </div>
+				</div>
+
+
+			{% endfor %}
+			</div>
+		</div>
+
+
+{% endblock %}
